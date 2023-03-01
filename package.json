@@ -1,28 +1,28 @@
 {
-  "name": "typescript-action",
-  "version": "0.0.0",
+  "name": "git-pr-release-ts",
+  "version": "0.1.0",
   "private": true,
-  "description": "TypeScript template action",
+  "description": "Release pull request generator. implementation by TypeScript",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write '**/*.ts'",
     "format-check": "prettier --check '**/*.ts'",
     "lint": "eslint src/**/*.ts",
-    "package": "ncc build --source-map --license licenses.txt",
+    "package": "NODE_OPTIONS='--openssl-legacy-provider' ncc build --source-map --license licenses.txt",
     "test": "jest",
     "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/akym03/git-pr-release-ts"
   },
   "keywords": [
     "actions",
     "node",
     "setup"
   ],
-  "author": "",
+  "author": " akym03",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.0"
