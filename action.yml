@@ -1,11 +1,25 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'git-pr-release-ts'
+description: 'Creates a "release pull request", whose body consists of features list or pull requests that are to be released into production'
 inputs:
-  milliseconds: # change this
-    required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+  dry-run:
+    description: 'Do not create/update a PR. Just prints out'
+    required: false
+    default: false
+  show-json:
+    description: 'Show data of target PRs in JSON format'
+    required: false
+    default: false
+  squashed:
+    description: 'Handle squash merged PRs'
+    required: false
+    default: false
+  overwrite-description:
+    description: 'Force overwrite PR description'
+    required: false
+    default: false
 runs:
   using: 'node16'
   main: 'dist/index.js'
+outputs:
+  id:
+    description: The ID of "release pull request".
